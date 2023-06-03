@@ -330,9 +330,9 @@ WHERE nome = 'Bob Fisher')));
 
 
 -- resposta da consulta: 
-salões(num_salao, nome_hotel)
-(1, Matsoud Plaza)
-(3, Hilton)
+-- salões(num_salao, nome_hotel)
+-- (1, Matsoud Plaza)
+-- (3, Hilton)
 
 
 -- b)   Listar os árbitros (NumAssoc, NOmeAssoc) que arbitram somente jogos realizados no Hotel “Hilton”.
@@ -344,10 +344,10 @@ SELECT num_arb, nome FROM Jogo,
 
 
 -- resposta da consulta: 
-árbitros(num_participante, nome)
-(7, Boris Sparski)
-(8, Júlio)
-(9, Laura)
+-- árbitros(num_participante, nome)
+-- (7, Boris Sparski)
+-- (8, Júlio)
+-- (9, Laura)
 
 
 --c)    Listar os salões (NroId, NomeHotel) que não têm “televisão”
@@ -357,9 +357,9 @@ WHERE Salao.nome_hotel = Hotel.nome_hotel AND
 
 
 -- resposta da consulta: 
-salões(num_salao, nome_hotel)
-(2, Ibis Consolação)
-(4, Matsoud Plaza)
+-- salões(num_salao, nome_hotel)
+-- (2, Ibis Consolação)
+-- (4, Matsoud Plaza)
 
 
 --d)    Listar o nome dos árbitros que arbitram jogos em todos os salões localizados no Hotel “Matsoud Plaza”.
@@ -371,9 +371,9 @@ SELECT nome FROM Participante
 
 
 -- resposta da consulta: 
-árbitro(nome)
-(Boris Sparski)
-(Laura)
+-- árbitro(nome)
+-- (Boris Sparski)
+-- (Laura)
 
 
 --e)    Listar os jogos (CodJogo, IdSal) a serem feitos no mês de junho de 2023.
@@ -382,8 +382,8 @@ WHERE mes_jorn = 6 AND ano_jorn = 2023;
 
 
 -- resposta da consulta: 
-jogos(num_jogo, num_salao)
-(1, 1)
+-- jogos(num_jogo, num_salao)
+-- (1, 1)
 
 
 --f)    Qual é a quantidade total de jogos a serem arbitrados por “Boris Sparski”?
@@ -393,7 +393,7 @@ WHERE nome = 'Boris Sparski');
 
 
 -- resposta da consulta: 
-4
+-- 4
 
 
 --g)    Qual é o pais(num, nome) com o maior número de participantes
@@ -408,8 +408,8 @@ LIMIT 1;
 
 
 -- resposta da consulta: 
-pais(num_pais, nome)
-(3, Chile)
+-- pais(num_pais, nome)
+-- (3, Chile)
 
 
 --h)    Listar os jogos(num_identificador) nos quais o jogador “Garry Kasparov” joga com as fichas pretas.
@@ -424,10 +424,10 @@ WHERE Participante.nome = 'Garry Kasparov' AND Joga.cor = 'pretas';
 
 
 -- resposta da consulta: 
-jogos(num_jogo)
-(1)
-(5)
-(6)
+-- jogos(num_jogo)
+-- (1)
+-- (5)
+-- (6)
 
 
 --i)     Remover todos os participantes acomodados no Hotel “Matsoud Plaza”
@@ -437,27 +437,27 @@ DELETE FROM Acomoda WHERE nome_hotel = 'Matsoud Plaza';
 
 
 -- antes da transação:
-acomoda (nome_hotel, num_participante, data_entrada, data_saida)
-(Matsoud Plaza, 1, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 2, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 3, 2023–06-01, 2023-06-02)
-(Matsoud Plaza, 4, 2023–06-01, 2023-06-02)
-(Matsoud Plaza, 5, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 6, 2023–06-01, 2023-06-02)
-(Matsoud Plaza, 7, 2023–06-01, 2023-06-02)
-(Hilton, 8, 2023–06-01, 2023-06-02)
-(Hilton, 9, 2023–06-01, 2023-06-02)
+-- acomoda (nome_hotel, num_participante, data_entrada, data_saida)
+-- (Matsoud Plaza, 1, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 2, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 3, 2023–06-01, 2023-06-02)
+-- (Matsoud Plaza, 4, 2023–06-01, 2023-06-02)
+-- (Matsoud Plaza, 5, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 6, 2023–06-01, 2023-06-02)
+-- (Matsoud Plaza, 7, 2023–06-01, 2023-06-02)
+-- (Hilton, 8, 2023–06-01, 2023-06-02)
+-- (Hilton, 9, 2023–06-01, 2023-06-02)
 
 
 
 
 -- depois da transação:
-acomoda (nome_hotel, num_participante, data_entrada, data_saida)
-(Ibis Consolação, 2, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 3, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 6, 2023–06-01, 2023-06-02)
-(Hilton, 8, 2023–06-01, 2023-06-02)
-(Hilton, 9, 2023–06-01, 2023-06-02)
+-- acomoda (nome_hotel, num_participante, data_entrada, data_saida)
+-- (Ibis Consolação, 2, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 3, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 6, 2023–06-01, 2023-06-02)
+-- (Hilton, 8, 2023–06-01, 2023-06-02)
+-- (Hilton, 9, 2023–06-01, 2023-06-02)
 
 
 --j)    Transferir todos os participantes acomodados no Hotel "Matsoud Plaza" para o hotel "Ibis Consolação"
@@ -469,26 +469,26 @@ COMMIT;
 
 
 -- antes da transação:
-acomoda (nome_hotel, num_participante, data_entrada, data_saida)
-(Matsoud Plaza, 1, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 2, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 3, 2023–06-01, 2023-06-02)
-(Matsoud Plaza, 4, 2023–06-01, 2023-06-02)
-(Matsoud Plaza, 5, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 6, 2023–06-01, 2023-06-02)
-(Matsoud Plaza, 7, 2023–06-01, 2023-06-02)
-(Hilton, 8, 2023–06-01, 2023-06-02)
-(Hilton, 9, 2023–06-01, 2023-06-02)
+-- acomoda (nome_hotel, num_participante, data_entrada, data_saida)
+-- (Matsoud Plaza, 1, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 2, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 3, 2023–06-01, 2023-06-02)
+-- (Matsoud Plaza, 4, 2023–06-01, 2023-06-02)
+-- (Matsoud Plaza, 5, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 6, 2023–06-01, 2023-06-02)
+-- (Matsoud Plaza, 7, 2023–06-01, 2023-06-02)
+-- (Hilton, 8, 2023–06-01, 2023-06-02)
+-- (Hilton, 9, 2023–06-01, 2023-06-02)
 
 
 -- depois da transação:
-acomoda (nome_hotel, num_participante, data_entrada, data_saida)
-(Ibis Consolação, 1, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 2, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 3, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 4, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 5, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 6, 2023–06-01, 2023-06-02)
-(Ibis Consolação, 7, 2023–06-01, 2023-06-02)
-(Hilton, 8, 2023–06-01, 2023-06-02)
-(Hilton, 9, 2023–06-01, 2023-06-02)
+-- acomoda (nome_hotel, num_participante, data_entrada, data_saida)
+-- (Ibis Consolação, 1, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 2, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 3, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 4, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 5, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 6, 2023–06-01, 2023-06-02)
+-- (Ibis Consolação, 7, 2023–06-01, 2023-06-02)
+-- (Hilton, 8, 2023–06-01, 2023-06-02)
+-- (Hilton, 9, 2023–06-01, 2023-06-02)
